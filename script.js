@@ -257,7 +257,3 @@ if (footerText) {
 console.log(
     "🚀 Mohammed Shahid's portfolio is running successfully!"
 );
-```
-
-});
-
