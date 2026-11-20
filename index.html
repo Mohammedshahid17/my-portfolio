@@ -1,822 +1,291 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mohammed Shahid — AI and Data Science student, aspiring developer and technology enthusiast.">
+  <title>Mohammed Shahid | Portfolio</title>
 
-  <title>M. Mohammed Shahid | AI & Data Science</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    /* =========================
-       BASIC RESET
-    ========================= */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #07111f;
-      color: #f5f7fb;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* =========================
-       NAVIGATION
-    ========================= */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      padding: 16px 7%;
-
-      background: rgba(7, 17, 31, 0.95);
-      backdrop-filter: blur(12px);
-
-      border-bottom: 1px solid #1d3148;
-    }
-
-    .logo {
-      font-size: 22px;
-      font-weight: bold;
-    }
-
-    .logo span {
-      color: #62d5ff;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 22px;
-    }
-
-    nav ul li a {
-      color: #d7e2ee;
-      transition: 0.2s;
-    }
-
-    nav ul li a:hover {
-      color: #62d5ff;
-    }
-
-    /* =========================
-       SECTIONS
-    ========================= */
-    section {
-      max-width: 1200px;
-      margin: auto;
-      padding: 90px 7%;
-    }
-
-    .section-title {
-      font-size: 38px;
-      margin-bottom: 10px;
-    }
-
-    .section-subtitle {
-      color: #9fb0c2;
-      margin-bottom: 30px;
-    }
-
-    /* =========================
-       HERO
-    ========================= */
-    .hero {
-      min-height: 88vh;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      text-align: center;
-    }
-
-    .hero-content {
-      max-width: 850px;
-    }
-
-    .hero-small {
-      color: #62d5ff;
-      font-size: 18px;
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
-
-    .hero h1 {
-      font-size: clamp(45px, 7vw, 78px);
-      line-height: 1.1;
-      margin-bottom: 18px;
-    }
-
-    .hero h1 span {
-      color: #62d5ff;
-    }
-
-    .hero h2 {
-      font-size: clamp(21px, 3vw, 30px);
-      font-weight: 500;
-      color: #c9d4e2;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      color: #aebdcd;
-      font-size: 18px;
-      max-width: 720px;
-      margin: auto;
-    }
-
-    /* =========================
-       BUTTONS
-    ========================= */
-    .buttons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 14px;
-
-      margin-top: 30px;
-    }
-
-    .btn {
-      display: inline-block;
-
-      padding: 12px 20px;
-
-      border-radius: 10px;
-
-      background: #10243a;
-      border: 1px solid #2d4965;
-
-      font-weight: bold;
-
-      transition: 0.2s;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-      border-color: #62d5ff;
-    }
-
-    .btn-primary {
-      background: #62d5ff;
-      color: #06101d;
-      border-color: #62d5ff;
-    }
-
-    /* =========================
-       CARDS
-    ========================= */
-    .card-grid {
-      display: grid;
-
-      grid-template-columns:
-        repeat(auto-fit, minmax(250px, 1fr));
-
-      gap: 20px;
-    }
-
-    .card {
-      background: #0c1b2c;
-
-      border: 1px solid #1d3148;
-
-      border-radius: 16px;
-
-      padding: 25px;
-
-      transition: 0.25s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      border-color: #62d5ff;
-    }
-
-    .card h3 {
-      margin-bottom: 10px;
-      font-size: 21px;
-    }
-
-    .muted {
-      color: #9fb0c2;
-    }
-
-    /* =========================
-       SKILLS
-    ========================= */
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .skill {
-      padding: 9px 14px;
-
-      background: #12283e;
-
-      border: 1px solid #24415c;
-
-      border-radius: 50px;
-
-      color: #d5e8f7;
-
-      font-size: 14px;
-    }
-
-    /* =========================
-       PROJECTS
-    ========================= */
-    .project-card {
-      min-height: 190px;
-    }
-
-    /* =========================
-       CERTIFICATES
-       IMPORTANT:
-       NO CERTIFICATE IMAGE IS
-       DISPLAYED HERE.
-    ========================= */
-    .certificate-card {
-      min-height: 220px;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .certificate-info {
-      margin-bottom: 20px;
-    }
-
-    .certificate-year {
-      color: #9fb0c2;
-      margin-top: 5px;
-    }
-
-    .certificate-button {
-      display: block;
-
-      text-align: center;
-
-      padding: 12px 15px;
-
-      border-radius: 10px;
-
-      background: #62d5ff;
-
-      color: #06101d;
-
-      font-weight: bold;
-
-      transition: 0.2s;
-    }
-
-    .certificate-button:hover {
-      transform: translateY(-2px);
-      opacity: 0.9;
-    }
-
-    /* =========================
-       CONTACT
-    ========================= */
-    .contact {
-      text-align: center;
-    }
-
-    .contact-email {
-      color: #62d5ff;
-      font-size: 18px;
-      display: inline-block;
-      margin: 12px 0 20px;
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
-    footer {
-      text-align: center;
-
-      padding: 30px 7%;
-
-      border-top: 1px solid #1d3148;
-
-      color: #8fa2b6;
-    }
-
-    /* =========================
-       MOBILE
-    ========================= */
-    @media (max-width: 700px) {
-
-      nav {
-        flex-direction: column;
-        gap: 12px;
-      }
-
-      nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 13px;
-        font-size: 14px;
-      }
-
-      section {
-        padding: 70px 6%;
-      }
-
-      .hero {
-        min-height: 80vh;
-      }
-
-      .hero h1 {
-        font-size: 45px;
-      }
-
-      .section-title {
-        font-size: 32px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
-  <!-- =========================
-       NAVIGATION
-  ========================== -->
-
-  <nav>
-
-    <div class="logo">
-      M. Mohammed <span>Shahid</span>
-    </div>
-
-    <ul>
-      <li>
-        <a href="#about">About</a>
-      </li>
-
-      <li>
-        <a href="#skills">Skills</a>
-      </li>
-
-      <li>
-        <a href="#projects">Projects</a>
-      </li>
-
-      <li>
-        <a href="#certificates">Certificates</a>
-      </li>
-
-      <li>
-        <a href="#contact">Contact</a>
-      </li>
-    </ul>
-
-  </nav>
-
-
-  <!-- =========================
-       HERO
-  ========================== -->
-
-  <section class="hero">
-
-    <div class="hero-content">
-
-      <div class="hero-small">
-        B.Tech AI & Data Science · First Year
-      </div>
-
-      <h1>
-        Hi, I'm <span>Mohammed Shahid</span>
-      </h1>
-
-      <h2>
-        AI & Data Science Student
-      </h2>
-
-      <p>
-        I'm a first-year B.Tech AI & Data Science student at
-        Dhaanish College of Engineering. I'm interested in Artificial
-        Intelligence, Data Science, software development and building
-        useful technology.
-      </p>
-
-      <div class="buttons">
-
-        <a
-          class="btn btn-primary"
-          href="#projects"
-        >
-          View My Projects
-        </a>
-
-
-        <a
-          class="btn"
-          href="https://www.linkedin.com/in/mohammed-shahid-3b4b5a432/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          LinkedIn ↗
-        </a>
-
-
-        <a
-          class="btn"
-          href="https://github.com/Mohammedshahid17"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub ↗
-        </a>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       ABOUT
-  ========================== -->
-
-  <section id="about">
-
-    <h2 class="section-title">
-      About Me
-    </h2>
-
-    <p class="section-subtitle">
-      A little about me
-    </p>
-
-
-    <div class="card">
-
-      <h3>
-        M. Mohammed Shahid
-      </h3>
-
-      <p class="muted">
-
-        I am currently pursuing B.Tech in Artificial Intelligence
-        and Data Science at Dhaanish College of Engineering.
-
-        I'm continuously learning programming, AI, machine learning,
-        data science and web development.
-
-      </p>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       SKILLS
-  ========================== -->
-
-  <section id="skills">
-
-    <h2 class="section-title">
-      Skills
-    </h2>
-
-    <p class="section-subtitle">
-      Technologies and areas I'm learning
-    </p>
-
-
-    <div class="skills">
-
-      <span class="skill">
-        Python
-      </span>
-
-      <span class="skill">
-        C
-      </span>
-
-      <span class="skill">
-        C++
-      </span>
-
-      <span class="skill">
-        HTML
-      </span>
-
-      <span class="skill">
-        CSS
-      </span>
-
-      <span class="skill">
-        JavaScript
-      </span>
-
-      <span class="skill">
-        Artificial Intelligence
-      </span>
-
-      <span class="skill">
-        Machine Learning
-      </span>
-
-      <span class="skill">
-        Data Science
-      </span>
-
-      <span class="skill">
-        Git & GitHub
-      </span>
-
-      <span class="skill">
-        Problem Solving
-      </span>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       PROJECTS
-  ========================== -->
-
-  <section id="projects">
-
-    <h2 class="section-title">
-      Projects
-    </h2>
-
-    <p class="section-subtitle">
-      Things I've built and I'm building
-    </p>
-
-
-    <div class="card-grid">
-
-
-      <div class="card project-card">
-
-        <h3>
-          AI Startup Validation Platform
-        </h3>
-
-        <p class="muted">
-
-          A platform concept that helps students and first-time
-          founders turn startup assumptions into experiments,
-          research and real-world evidence.
-
+  <header class="header">
+    <nav class="navbar container">
+      <a href="#home" class="logo">shahid<span>.</span></a>
+
+      <button class="menu-toggle" id="menuToggle"
+        aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certificates">Certificates</a></li>
+        <li><a href="#contact" class="nav-contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero container" id="home">
+      <div class="hero-content reveal">
+        <p class="eyebrow"><span class="status-dot"></span> OPEN TO LEARNING & OPPORTUNITIES</p>
+
+        <h1>Building ideas into <span>meaningful</span> digital experiences.</h1>
+
+        <p class="hero-description">
+          Hello, I'm Mohammed Shahid — an AI & Data Science student
+          interested in technology, application development and
+          solving real-world problems.
         </p>
 
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">Explore my work ↗</a>
+          <a href="#contact" class="btn btn-outline">Get in touch</a>
+        </div>
+
+        <div class="hero-socials">
+          <a href="https://github.com/Mohammedshahid17" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <a href="https://linkedin.com/in/mohammed-shahid-3b4b5a432" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        </div>
       </div>
 
+      <div class="hero-visual reveal">
+        <div class="visual-card">
+          <div class="visual-top">
+            <span>PERSONAL PROFILE</span>
+            <span>01 / 01</span>
+          </div>
 
-      <div class="card project-card">
+          <div class="initials">MS<span>.</span></div>
 
-        <h3>
-          Personal Portfolio
-        </h3>
+          <div class="visual-bottom">
+            <div>
+              <strong>Mohammed Shahid</strong>
+              <p>AI & Data Science Student</p>
+            </div>
+            <span class="visual-arrow">↗</span>
+          </div>
+        </div>
+        <p class="visual-caption">CURIOUS MIND. CONTINUOUS GROWTH.</p>
+      </div>
+    </section>
 
-        <p class="muted">
+    <!-- ABOUT -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">01 — ABOUT ME</p>
+          <h2>A little about <span>my journey.</span></h2>
+        </div>
 
-          A responsive portfolio website created to showcase
-          my skills, projects, certificates and achievements.
+        <div class="about-grid">
+          <div class="about-intro reveal">
+            <h3>Learning today.<br>Creating tomorrow.</h3>
+          </div>
 
+          <div class="about-text reveal">
+            <p>
+              I'm currently pursuing my B.Tech in Artificial Intelligence
+              and Data Science at Dhaanish College of Engineering.
+            </p>
+            <p>
+              I enjoy exploring technology, building applications and
+              websites, and understanding how ideas can become useful
+              digital solutions.
+            </p>
+            <p>
+              I'm at the beginning of my professional journey, and
+              I'm focused on developing my technical knowledge,
+              improving my problem-solving abilities and learning
+              something new every day.
+            </p>
+
+            <div class="about-details">
+              <div>
+                <span>EDUCATION</span>
+                <strong>B.Tech — AI & DS</strong>
+              </div>
+              <div>
+                <span>INSTITUTION</span>
+                <strong>Dhaanish College of Engineering</strong>
+              </div>
+              <div>
+                <span>LOCATION</span>
+                <strong>Thiruvarur, Tamil Nadu</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section container" id="skills">
+      <div class="section-heading reveal">
+        <p class="eyebrow">02 — MY TOOLKIT</p>
+        <h2>Things I'm <span>learning.</span></h2>
+        <p class="section-subtitle">
+          Exploring different technologies and strengthening my foundation.
+        </p>
+      </div>
+
+      <div class="skills-grid">
+        <article class="skill-card reveal">
+          <span class="skill-number">01</span>
+          <div class="skill-symbol">⌘</div>
+          <h3>Programming</h3>
+          <p>Building logical thinking and programming fundamentals.</p>
+          <span class="skill-tag">Learning</span>
+        </article>
+
+        <article class="skill-card reveal">
+          <span class="skill-number">02</span>
+          <div class="skill-symbol">⌨</div>
+          <h3>Web Development</h3>
+          <p>Exploring the fundamentals of building websites.</p>
+          <span class="skill-tag">Learning</span>
+        </article>
+
+        <article class="skill-card reveal">
+          <span class="skill-number">03</span>
+          <div class="skill-symbol">◈</div>
+          <h3>Artificial Intelligence</h3>
+          <p>Understanding intelligent systems and their applications.</p>
+          <span class="skill-tag">Exploring</span>
+        </article>
+
+        <article class="skill-card reveal">
+          <span class="skill-number">04</span>
+          <div class="skill-symbol">◎</div>
+          <h3>Data Science</h3>
+          <p>Discovering how data can help solve meaningful problems.</p>
+          <span class="skill-tag">Exploring</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">03 — SELECTED WORK</p>
+          <h2>Ideas turned into <span>projects.</span></h2>
+          <p class="section-subtitle">
+            A look at what I've been building and exploring.
+          </p>
+        </div>
+
+        <article class="project-card reveal">
+          <div class="project-visual">
+            <div class="project-visual-content">
+              <span>01 / FEATURED PROJECT</span>
+              <div class="project-graphic">S<span>.</span>B</div>
+              <p>LEARN. EXPLORE. UNDERSTAND.</p>
+            </div>
+          </div>
+
+          <div class="project-info">
+            <p class="eyebrow">AI-POWERED LEARNING</p>
+            <h3>Study Buddy</h3>
+            <p>
+              An AI-powered learning assistant designed to help students
+              understand concepts and explore academic topics.
+            </p>
+            <div class="project-tags">
+              <span>Artificial Intelligence</span>
+              <span>Web Application</span>
+            </div>
+            <a href="https://study-buddy-qqbe.onrender.com"
+               target="_blank" rel="noopener noreferrer"
+               class="project-link">View project ↗</a>
+          </div>
+        </article>
+
+        <div class="project-note reveal">
+          <p>More projects are on the way. I'm just getting started.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATES -->
+    <section class="section container" id="certificates">
+      <div class="section-heading reveal">
+        <p class="eyebrow">04 — ACHIEVEMENTS</p>
+        <h2>Learning, <span>recognised.</span></h2>
+        <p class="section-subtitle">
+          A collection of certificates from my learning journey.
+        </p>
+      </div>
+
+      <div class="certificate-grid">
+        <button class="certificate-card reveal" data-certificate="certificate1.jpg">
+          <img src="certificate1.jpg" alt="Certificate 1">
+          <span>View certificate ↗</span>
+        </button>
+
+        <button class="certificate-card reveal" data-certificate="certificate2.jpg">
+          <img src="certificate2.jpg" alt="Certificate 2">
+          <span>View certificate ↗</span>
+        </button>
+
+        <button class="certificate-card reveal" data-certificate="certificate3.jpg">
+          <img src="certificate3.jpg" alt="Certificate 3">
+          <span>View certificate ↗</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact-section" id="contact">
+      <div class="container contact-content reveal">
+        <p class="eyebrow">05 — GET IN TOUCH</p>
+        <h2>Have an idea?<br>Let's <span>connect.</span></h2>
+        <p>
+          I'm always interested in learning, connecting with people
+          and exploring opportunities to grow.
         </p>
 
-      </div>
+        <a href="mailto:mohammedshahid1704@gmail.com"
+           class="btn btn-light">Send me an email ↗</a>
 
-
-      <div class="card project-card">
-
-        <h3>
-          More Coming Soon
-        </h3>
-
-        <p class="muted">
-
-          More AI, Data Science and software projects will be
-          added as I build them.
-
-        </p>
-
-      </div>
-
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       CERTIFICATES
-       
-       IMPORTANT:
-       The images are NOT shown here.
-       Only the buttons are shown.
-  ========================== -->
-
-  <section id="certificates">
-
-    <h2 class="section-title">
-      Certificates
-    </h2>
-
-    <p class="section-subtitle">
-      Click "View Certificate" to open the certificate.
-    </p>
-
-
-    <div class="card-grid">
-
-
-      <!-- CERTIFICATE 1 -->
-
-      <div class="card certificate-card">
-
-        <div class="certificate-info">
-
-          <h3>
-            Certified HTML Developer
-          </h3>
-
-          <p class="muted">
-            CCI Computer Training Center
-          </p>
-
-          <p class="certificate-year">
-            2026 · Grade A++
-          </p>
-
+        <div class="contact-socials">
+          <a href="https://github.com/Mohammedshahid17" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <a href="https://linkedin.com/in/mohammed-shahid-3b4b5a432" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="mailto:mohammedshahid1704@gmail.com">Email ↗</a>
         </div>
-
-
-        <a
-          class="certificate-button"
-          href="certificate1.jpg"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          View Certificate ↗
-        </a>
-
       </div>
+    </section>
 
+  </main>
 
-      <!-- CERTIFICATE 2 -->
-
-      <div class="card certificate-card">
-
-        <div class="certificate-info">
-
-          <h3>
-            Certificate in Python & Artificial Intelligence
-          </h3>
-
-          <p class="muted">
-            CCI Computer Training Center
-          </p>
-
-          <p class="certificate-year">
-            2026 · Grade A++
-          </p>
-
-        </div>
-
-
-        <a
-          class="certificate-button"
-          href="certificate2.jpg"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          View Certificate ↗
-        </a>
-
-      </div>
-
-
-      <!-- CERTIFICATE 3 -->
-
-      <div class="card certificate-card">
-
-        <div class="certificate-info">
-
-          <h3>
-            Diploma in Information Technology
-          </h3>
-
-          <p class="muted">
-            CCI Computer Training Center
-          </p>
-
-          <p class="certificate-year">
-            2026 · Grade A++
-          </p>
-
-        </div>
-
-
-        <a
-          class="certificate-button"
-          href="certificate3.jpg"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          View Certificate ↗
-        </a>
-
-      </div>
-
-
+  <footer class="footer">
+    <div class="container footer-content">
+      <a href="#home" class="logo">shahid<span>.</span></a>
+      <p>Designed with curiosity & built with continuous learning.</p>
+      <p>© <span id="year"></span> Mohammed Shahid</p>
     </div>
-
-  </section>
-
-
-  <!-- =========================
-       CONTACT
-  ========================== -->
-
-  <section id="contact" class="contact">
-
-    <h2 class="section-title">
-      Contact Me
-    </h2>
-
-    <p class="section-subtitle">
-      Let's connect
-    </p>
-
-
-    <a
-      class="contact-email"
-      href="mailto:mohammedshahid1704@gmail.com"
-    >
-      mohammedshahid1704@gmail.com
-    </a>
-
-
-    <div class="buttons">
-
-      <a
-        class="btn btn-primary"
-        href="https://www.linkedin.com/in/mohammed-shahid-3b4b5a432/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Open LinkedIn ↗
-      </a>
-
-
-      <a
-        class="btn"
-        href="https://github.com/Mohammedshahid17"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Open GitHub ↗
-      </a>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       FOOTER
-  ========================== -->
-
-  <footer>
-
-    © 2026 M. Mohammed Shahid · B.Tech AI & Data Science
-
   </footer>
 
+  <!-- CERTIFICATE IMAGE VIEWER -->
+  <div class="certificate-modal" id="certificateModal"
+       role="dialog" aria-modal="true" aria-label="Certificate viewer">
+    <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+    <img src="" alt="Full size certificate" id="modalImage">
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
