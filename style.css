@@ -803,3 +803,80 @@ button {
     transform: none;
   }
 }
+
+/* =================================
+   PREMIUM FLOAT & TOUCH EFFECTS
+================================= */
+
+/* Gentle continuous floating animation */
+.initial-card {
+  animation: gentleFloat 5s ease-in-out infinite;
+}
+
+@keyframes gentleFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* Smooth floating effect on project and skill cards */
+.skill-card,
+.project-card,
+.certificate-card {
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.skill-card:hover,
+.project-card:hover,
+.certificate-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(120, 45, 64, 0.16);
+}
+
+/* Touch feedback for phones and tablets */
+.btn:active,
+.skill-card:active,
+.project-card:active,
+.certificate-card:active {
+  transform: scale(0.97);
+}
+
+/* Interactive button shine */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.10);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.btn:hover::after {
+  opacity: 1;
+}
+
+/* Keyboard accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #a34d62;
+  outline-offset: 5px;
+}
+
+/* Respect reduced-motion settings */
+@media (prefers-reduced-motion: reduce) {
+  .initial-card {
+    animation: none;
+  }
+}
+
