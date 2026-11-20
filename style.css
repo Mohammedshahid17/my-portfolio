@@ -874,9 +874,7 @@ button:focus-visible {
 }
 
 /* Respect reduced-motion settings */
-@media (prefers-reduced-motion: reduce) {
-  .initial-card {
-    animation: none;
-  }
+.initial-card {
+  animation: gentleFloat 5s ease-in-out infinite;
 }
 
